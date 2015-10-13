@@ -36,6 +36,6 @@ Message example: xpl-cmnd control.basic { device=k8056-1 type=R1  current=high }
 
 (Relais #1 of K8056 board #1)
 
-### ACK xpl-trig message to xpl-cmnd command
-xpl-trig sensor.basic  device=k8056-1 type=R1 current=high
+### ACK xpl-stat message to respond for xpl-cmnd command
+xpl-stat sensor.basic  device=k8056-1 type=R1 current=high
 
