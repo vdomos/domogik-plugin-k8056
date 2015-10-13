@@ -31,3 +31,11 @@ Command on,off and pulse relay of K8056 board With xPL Messages
         'B': Send a byte, Allows to control the 8 relays in 1 byte (LD1:MSB, LD8:LSB) 
 
 
+### Listeners
+Message example: xpl-cmnd control.basic { device=k8056-1 type=R1  current=high }
+
+(Relais #1 of K8056 board #1)
+
+### ACK xpl-trig message to xpl-cmnd command
+xpl-trig sensor.basic  device=k8056-1 type=R1 current=high
+
