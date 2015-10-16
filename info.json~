@@ -1,5 +1,6 @@
 {
     "json_version": 2,
+    
     "identity": {
         "author": "domos", 
         "author_email": "domos.vesta at gmail.com", 
@@ -16,6 +17,8 @@
         "type": "plugin", 
         "version": "0.1"
     }, 
+
+    
     "configuration": [
         {
             "default": "/dev/k8056",
@@ -26,6 +29,8 @@
             "type": "string"
         }
     ], 
+
+    
     "device_types": {
         "k8056.relay": {
             "id": "k8056.relay",
@@ -36,6 +41,8 @@
             "parameters": []
         }
     },
+    
+    
     "commands": { 
         "cmd_switch_relay" : {
             "name" : "Cmd switch relay",
@@ -50,6 +57,8 @@
             "xpl_command" : "set_switch_relay"
         }
     },
+
+    
     "xpl_commands": {
         "set_switch_relay" : {
             "name": "Set switch relay",
@@ -72,6 +81,8 @@
             }
         }
      }, 
+
+    
     "sensors": {
         "sensor_switch_relay": {
             "name": "Sensor switch relay",
@@ -88,6 +99,8 @@
             }
         }
     },
+    
+    
     "xpl_stats": {
        "stat_switch_relay": {
             "name": "Stat switch relay",
@@ -117,5 +130,6 @@
                 ]
             }
        }
-    }
+    },
+
 }
