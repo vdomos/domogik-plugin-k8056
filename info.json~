@@ -1,6 +1,5 @@
 {
     "json_version": 2,
-    
     "identity": {
         "author": "domos", 
         "author_email": "domos.vesta at gmail.com", 
@@ -17,8 +16,7 @@
         "type": "plugin", 
         "version": "0.1"
     }, 
-
-    
+    "products" : [ ],
     "configuration": [
         {
             "default": "/dev/k8056",
@@ -29,8 +27,6 @@
             "type": "string"
         }
     ], 
-
-    
     "device_types": {
         "k8056.relay": {
             "id": "k8056.relay",
@@ -38,11 +34,26 @@
             "name": "k8056 relay",
             "commands": ["cmd_switch_relay"],
             "sensors": ["sensor_switch_relay"],
-            "parameters": []
-        }
+            "parameters": [
+                {
+                    "key": "address",
+                    "xpl": true,
+                    "description": "The address of the k8056 board (805600001..805600255)",
+                    "type": "integer",
+                    "max_value": 255,
+                    "min_value": 1
+                },
+                {
+                    "key": "unit",
+                    "xpl": true,
+                    "description": "Relay number (1..9)",
+                    "type": "integer",
+                    "max_value": 9,
+                    "min_value": 1
+                }
+            ]
+	}
     },
-    
-    
     "commands": { 
         "cmd_switch_relay" : {
             "name" : "Cmd switch relay",
@@ -57,8 +68,6 @@
             "xpl_command" : "set_switch_relay"
         }
     },
-
-    
     "xpl_commands": {
         "set_switch_relay" : {
             "name": "Set switch relay",
@@ -66,23 +75,10 @@
             "xplstat_name": "stat_switch_relay",
             "parameters": {
                 "static": [],
-                "device": [
-                    {
-                        "key": "address",
-                        "description": "Ex.: ac.basic { address=0 unit=1 command=off }",
-                        "type": "string"
-                    },
-                    {
-                        "key": "unit",
-                        "description": "Ex.: ac.basic { address=0 unit=1 command=off }",
-                        "type": "integer"
-                    }
-                ]
+                "device": []
             }
         }
      }, 
-
-    
     "sensors": {
         "sensor_switch_relay": {
             "name": "Sensor switch relay",
@@ -99,28 +95,13 @@
             }
         }
     },
-    
-    
     "xpl_stats": {
        "stat_switch_relay": {
             "name": "Stat switch relay",
             "schema": "ac.device",
             "parameters": {
                 "static": [],
-                "device": [
-                    {
-                        "key": "address",
-                        "description": "Ex.: ac.basic { address=0 unit=1 command=off }",
-                        "type": "string",
-                        "multiple": "|"
-                    },
-                    {
-                        "key": "unit",
-                        "description": "Ex.: ac.basic { address=0 unit=1 command=off }",
-                        "type": "integer",
-                        "multiple": "|"
-                    }
-                ],
+                "device": [],
                 "dynamic": [
                     {
                          "key": "command",
@@ -130,6 +111,5 @@
                 ]
             }
        }
-    },
-
+    }
 }

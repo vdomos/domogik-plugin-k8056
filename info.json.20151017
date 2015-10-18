@@ -34,24 +34,7 @@
             "name": "k8056 relay",
             "commands": ["cmd_switch_relay"],
             "sensors": ["sensor_switch_relay"],
-            "parameters": [
-                {
-                    "key": "address",
-                    "xpl": true,
-                    "description": "The address of the k8056 board (805600001..805600255)",
-                    "type": "integer",
-                    "max_value": 805600255,
-                    "min_value": 805600001
-                },
-                {
-                    "key": "unit",
-                    "xpl": true,
-                    "description": "Relay number (1..9)",
-                    "type": "integer",
-                    "max_value": 9,
-                    "min_value": 1
-                }
-            ]
+            "parameters": []
 	}
     },
     "commands": { 
@@ -75,7 +58,18 @@
             "xplstat_name": "stat_switch_relay",
             "parameters": {
                 "static": [],
-                "device": []
+                "device": [
+                    {
+                        "key": "address",
+                        "description": "Ex.: ac.basic { address=0 unit=1 command=off }",
+                        "type": "string"
+                    },
+                    {
+                        "key": "unit",
+                        "description": "Ex.: ac.basic { address=0 unit=1 command=off }",
+                        "type": "integer"
+                    }
+                ]
             }
         }
      }, 
@@ -101,7 +95,18 @@
             "schema": "ac.device",
             "parameters": {
                 "static": [],
-                "device": [],
+                "device": [
+                    {
+                        "key": "address",
+                        "description": "Ex.: ac.basic { address=0 unit=1 command=off }",
+                        "type": "string"
+                    },
+                    {
+                        "key": "unit",
+                        "description": "Ex.: ac.basic { address=0 unit=1 command=off }",
+                        "type": "integer"
+                    }
+                ],
                 "dynamic": [
                     {
                          "key": "command",

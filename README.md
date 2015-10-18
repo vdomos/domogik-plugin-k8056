@@ -1,9 +1,25 @@
 # domogik-plugin-k8056
 Domogik Plugin for k8056 board
 
+# Purpose
+
+This is a package for Domogik : http://www.domogik.org
+
+Domogik is an open source home automation solution.
+
+# Documentation 
+
+You can find the documentation source in the **docs/** folder. When the package will be installed, the documentation will be available in the **Documentation** menu of the Domogik administration for this package.
+You may also find online documentation for this plugin. You will be able to find the documentation url on http://repo-public.domogik.org/dashboard
+
+# Install the package
+
+To install this package on your Domogik system, you can go in this GitHub repository releases page and get the link to a release .zip file. Then you just have to do :
+
+    dmg_package -i http://path.to/the/file.zip
 
 
-## Plugin purpose
+
 
 ### K8056 relay board management 
 
@@ -29,13 +45,4 @@ Command on,off and pulse relay of K8056 board With xPL Messages
         'A': Change the current address of a card, followed by the address (1..255)
         'F': Force all cards address to 1 (default)
         'B': Send a byte, Allows to control the 8 relays in 1 byte (LD1:MSB, LD8:LSB) 
-
-
-### Listeners
-Message example: xpl-cmnd control.basic { device=k8056-1 type=R1  current=high }
-
-(Relais #1 of K8056 board #1)
-
-### ACK xpl-stat message to respond for xpl-cmnd command
-xpl-stat sensor.basic  device=k8056-1 type=R1 current=high
 
