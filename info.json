@@ -98,7 +98,7 @@
     "xpl_stats": {
        "stat_switch_relay": {
             "name": "Stat switch relay",
-            "schema": "ac.device",
+            "schema": "ac.basic",
             "parameters": {
                 "static": [],
                 "device": [],

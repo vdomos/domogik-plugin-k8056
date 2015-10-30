@@ -107,7 +107,7 @@ class K8056:
 		@param relay :   relay number of K8056 board
 		@param command : relay command for K8056 board
 		"""
-		instructions = { '1': 'S', '0': 'C' }	  # Conversion 'command' xpl command to k8056 instructions.
+		instructions = { 'on': 'S', 'off': 'C' }	  # Conversion 'command' xpl command to k8056 instructions.
 	
 		self._log.debug("### Write command '%s' to relay #%s on K8056 board #%d." % (command, relay, address) )
 

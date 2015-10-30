@@ -98,7 +98,7 @@ class XplK8056Manager(XplPlugin):
 			See lib/k8056.py for technical description of K8056 Board serial protocol
 		"""
 		self.log.debug("### Call k8056_cmnd_cb")
-		self.log.debug("### Command %s on relais #%s of board #%s" % (message.data['command'], message.data["unit"], message.data["address"]))
+		self.log.debug("### Command '%s' on relais #%s of board #%s" % (message.data['command'], message.data["unit"], message.data["address"]))
 
 	
 		board_address = int(message.data['address']) - 805600000
@@ -112,7 +112,7 @@ class XplK8056Manager(XplPlugin):
 			return
 				
 		command_relay = message.data['command']
-		if command_relay not in ['1', '0']:
+		if command_relay not in ['on', 'off']:
 			self.log.warning("### Bad command for k8056 board : %s" % command_relay)
 			return
 
