@@ -9,6 +9,10 @@ Purpose
 
 The k8056 plugin is used to control the k8056 relay board
 
+http://www.velleman.eu/products/view/?country=fr&lang=en&id=351282
+
+.. image:: k8056.png
+
 Dependencies
 ============
 
