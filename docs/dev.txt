@@ -1,0 +1,49 @@
+========================
+Development informations
+========================
+
+xPL messages
+============
+
+xpl-cmnd
+--------
+
+The **ac.basic** message is used: ::
+
+	xpl-cmnd
+    {
+    ...
+    }
+    ac.basic 
+    { 
+    address=<address (805600001..805600255) for k8056 board address (1..255)> 
+    unit=<relay number of k8056 board (1..9), 9 is for all relay>
+    command=<value : on|off>
+    }
+
+
+
+xpl-stat
+--------
+
+The **ac.basic** message is used: ::
+
+Acknowledge for xpl-cmnd.
+
+    xpl-stat
+    {
+    ...
+    }
+    ac.basic 
+    { 
+    address=<address (805600001..805600255) for k8056 board address (1..255)> 
+    unit=<relay number of k8056 board (1..9), 9 is for all relay>
+    command=<value : on|off>
+	}
+	
+	
+xpl-trig
+--------
+
+n/a
+

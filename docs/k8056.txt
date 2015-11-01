@@ -1,0 +1,54 @@
+.. _index:
+
+===============
+Plugin k8056
+===============
+
+Purpose
+=======
+
+The k8056 plugin is used to control the k8056 relay board
+
+Dependencies
+============
+
+Python module: pyserial (>=2.5)
+
+K8056 Board need un serial interface.
+it's possible to remote control th board with the Remserial program: http://lpccomp.bc.ca/remserial/
+
+
+Plugin configuration
+====================
+
+Only need to set the "K8056 serial device"
+
+
+Create the domogik devices
+==========================
+
+Domogik device type : "k8056 relay"
+-----------------------------------
+
+2 parameters are needed for a domogik device creation:
+
+===================== =========================== ======================================================================
+Key                   Type                        Description
+===================== =========================== ======================================================================
+addresse              integer                     k8056 board address (805600001..805600255) for real address (1..255)
+--------------------- --------------------------- ----------------------------------------------------------------------
+unit                  integer                     Relay number of k8056 board (1..9), 9 is for all relay
+===================== =========================== ======================================================================
+
+
+Start the plugin
+================
+
+You can now start the plugin (start button) and use the created domogik devices.
+
+
+Set up your widgets on the user interface
+=========================================
+
+You can now place the widgets of your devices features on the user interface.
+
