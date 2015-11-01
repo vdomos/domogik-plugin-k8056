@@ -10,7 +10,7 @@ xpl-cmnd
 
 The **ac.basic** message is used: ::
 
-	xpl-cmnd
+    xpl-cmnd
     {
     ...
     }
@@ -27,8 +27,6 @@ xpl-stat
 --------
 
 The **ac.basic** message is used: ::
-
-Acknowledge for xpl-cmnd.
 
     xpl-stat
     {

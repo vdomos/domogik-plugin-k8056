@@ -14,7 +14,8 @@ Dependencies
 
 Python module: pyserial (>=2.5)
 
-K8056 Board need un serial interface.
+K8056 Board need a serial interface.
+
 it's possible to remote control th board with the Remserial program: http://lpccomp.bc.ca/remserial/
 
 
