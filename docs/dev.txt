@@ -47,9 +47,8 @@ n/a
 
 
 
-========================
 Protocole informations
-========================
+======================
 
     Technical Description of K8056 Board serial protocol
 
