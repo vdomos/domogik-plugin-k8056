@@ -61,7 +61,6 @@ Technical Description of K8056 Board serial protocol
     * Instruction (see below), only supported now 'S'|'C'|'T' set/clear/toggle
     * Relay ('1'..'9'), 9 for all relay
     * Checkum, it is the 2-complement of the sum of the 4 previous bytes + 1. 
-        In Python, checksum = ( 255 - (13 + int('1') + ord('S') + ord('1')) % 256 ) + 1
 
 * Instructions:
 
