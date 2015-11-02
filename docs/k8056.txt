@@ -57,3 +57,5 @@ Set up your widgets on the user interface
 
 You can now place the widgets of your devices features on the user interface.
 
+.. image:: Domoweb_k8056_Widgets.png
+
