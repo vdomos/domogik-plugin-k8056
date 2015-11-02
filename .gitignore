@@ -2,5 +2,6 @@
 *.swp
 _build_doc
 *~
+*.kate-swp
 *.[oa]
 *.20*
