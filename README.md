@@ -1,5 +1,5 @@
 # domogik-plugin-k8056
-Domogik Plugin for k8056 board
+Domogik Plugin for Velleman k8056 relay board
 
 # Purpose
 
