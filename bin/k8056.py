@@ -63,7 +63,7 @@ class XplK8056Manager(XplPlugin):
         # Configuration
         device = self.get_config("k8056_device")                         # Serial port
         if device is None:
-            self.log.error('### Device is not configured, exitting')
+            self.log.error(u'### Device is not configured, exitting')
             self.force_leave()
             return
 
@@ -80,7 +80,7 @@ class XplK8056Manager(XplPlugin):
             return
 
         # Create listeners
-        self.log.info("### Creating listener for K8056")
+        self.log.info(u"==> Creating listener for K8056")
         Listener(self.k8056_cmnd_cb, self.myxpl, {'xpltype': 'xpl-cmnd', 'schema': 'ac.basic'})    # ac.basic { address=0 unit=1 command=off }
 
         self.ready()
@@ -96,30 +96,30 @@ class XplK8056Manager(XplPlugin):
 
             See lib/k8056.py for technical description of K8056 Board serial protocol
         """
-        self.log.debug("### Call k8056_cmnd_cb")
-        self.log.debug("### Command '%s' on relais #%s of board #%s" % (message.data['command'], message.data["unit"], message.data["address"]))
+        self.log.debug(u"==> Call k8056_cmnd_cb")
+        self.log.debug(u"==> Command '%s' on relais #%s of board #%s" % (message.data['command'], message.data["unit"], message.data["address"]))
 
 
         board_address = int(message.data['address']) - 805600000
         if board_address not in range(1, 256):                         # Address of the card (1..255)
-            self.log.warning("### Address not for k8056 board : %d" % board_address)
+            self.log.warning(u"### Address not for k8056 board : %d" % board_address)
             return
 
         relay_number = message.data['unit']
         if int(relay_number) not in range(1, 10):                    # Relay number ('1'..'9'), 9=all
-            self.log.warning("### Bad relay number for k8056 board : %s" % relay_number)
+            self.log.warning(u"### Bad relay number for k8056 board : %s" % relay_number)
             return
 
         command_relay = message.data['command']
         if command_relay not in ['on', 'off']:
-            self.log.warning("### Bad command for k8056 board : %s" % command_relay)
+            self.log.warning(u"### Bad command for k8056 board : %s" % command_relay)
             return
 
         # Write command to K8056 board
         self.k8056_board.write(board_address, relay_number, command_relay)
 
         # Send ACK xpl-trig message to xpl-cmnd command.
-        self.log.debug("### Send xpl-trig msg to k8056 command")      # xpl-trig ac.basic { address=0 unit=1 command=off }
+        self.log.debug(u"==> Send xpl-trig msg to k8056 command")      # xpl-trig ac.basic { address=0 unit=1 command=off }
         mess = XplMessage()
         mess.set_type('xpl-trig')
         mess.set_schema('ac.basic')

@@ -91,10 +91,10 @@ class K8056:
         Open k8056 device
         @param device : The full path of the device where serial is connected
         """
-        self._log.info("### Opening k8056 device : %s" % device)
+        self._log.info(u"==> Opening k8056 device : %s" % device)
         try:
             self._ser = serial.Serial(device, 2400, timeout=1)
-            self._log.info("### k8056 port opened")
+            self._log.info(u"==> k8056 port opened")
         except:
             error = "Error while opening k8056 device : %s : %s" % (device, str(traceback.format_exc()))
             raise K8056Exception(error)
@@ -109,12 +109,12 @@ class K8056:
         """
         instructions = {'on': 'S', 'off': 'C'}      # Conversion 'command' xpl command to k8056 instructions.
 
-        self._log.debug("### Write command '%s' to relay #%s on K8056 board #%d." % (command, relay, address))
+        self._log.debug(u"==> Write command '%s' to relay #%s on K8056 board #%d." % (command, relay, address))
 
         checksum = (255 - (13 + address + ord(instructions[command]) + ord(relay)) % 256) + 1
         k8056_command = chr(13) + chr(address) + instructions[command] + relay + chr(checksum)
 
-        self._log.debug("### Trame send to K8056 board: %s %s %s %s %s" % (hex(13), hex(address), hex(ord(instructions[command])), hex(ord(relay)), hex(checksum)))
+        self._log.debug(u"==> Trame send to K8056 board: %s %s %s %s %s" % (hex(13), hex(address), hex(ord(instructions[command])), hex(ord(relay)), hex(checksum)))
 
         for k8056_trame_number in range(5):
             try:
@@ -127,7 +127,7 @@ class K8056:
     def close(self):
         """ close k8056 device
         """
-        self._log.info("### Close k8056 device")
+        self._log.info(u"==> Close k8056 device")
         try:
             self._ser.close()
         except:
